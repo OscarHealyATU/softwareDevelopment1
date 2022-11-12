@@ -5,8 +5,8 @@ public class shift {
         
         Scanner input = new Scanner(System.in);
         System.out.println("do you have a Ceaser cipher or a vigenere cipher? (type C or V");
-        char type = input.nextChar();
-        if(type == 'C' || type == 'c'){
+        //char type = input.nextChar();
+       // if(type == 'C' || type == 'c'){
             
         System.out.println("Enter in String to be shifted, no spaces");
         String cipherStr = input.next();
@@ -48,5 +48,5 @@ public class shift {
             System.out.print(resultArr[i] + "\t");
             
         }
-    }
+   // }
     }}
