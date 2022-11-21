@@ -48,5 +48,6 @@ public class shift {
             System.out.print(resultArr[i] + "\t");
             
         }
-   // }
-    }}
+        input.close();
+      }
+    }
