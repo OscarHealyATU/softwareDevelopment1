@@ -24,7 +24,7 @@ public class Question1 {
             System.out.println("correct!");
         }else {
             q1 = false;
-            System.out.println("correct!");
+            System.out.println("incorrect!");
         }
         input.close();
        
