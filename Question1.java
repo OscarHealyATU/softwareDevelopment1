@@ -26,6 +26,7 @@ public class Question1 {
             q1 = false;
             System.out.println("correct!");
         }
+        input.close();
        
     }
 }
