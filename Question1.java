@@ -9,10 +9,11 @@ public class Question1 {
         //variables
         boolean q1 = false;
         int count = 0;
+        Scanner input = new Scanner(System.in);
         String ans;
 
         // input code
-        Scanner input = new Scanner(System.in);
+        
         System.out.println("\nThe following code produces which output to the screen:\n\n");
         System.out.println(" int x = 65;\n if(x > 65){\n\tSystem.out.println(x);\n}");
         System.out.println("\n\n is it \nA.|\t65 \nB.|\tNothing is printed to the screen");

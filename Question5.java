@@ -5,9 +5,10 @@ import java.util.*;
 public class Question5 {
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         System.out.println("How many choices are possible when  using a single if-else statement?");
         System.out.println("select one:\n\nA.|\t One\nB.|\t Two\nC.|\t Three\nD.|\t Four\n");
-        Scanner input = new Scanner(System.in);
+        
         String ans = input.next();
 
         switch (ans) {
