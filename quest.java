@@ -7,7 +7,7 @@ public class quest {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        double money  = 12.38;
+        //double money  = 12.38;
         String name;
         // characters true = alive
         // 0 = dead
@@ -76,6 +76,6 @@ public class quest {
 
             System.out.println("well " + name + ", dear Sir, I can not tell you how glad i am to meet you, you saved me!");
         }
-        
+        input.close();
     }
 }
