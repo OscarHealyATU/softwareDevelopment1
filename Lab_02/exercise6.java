@@ -1,3 +1,4 @@
+package Lab_02;
 public class exercise6 {
 
     public static String name = "Oscar";
