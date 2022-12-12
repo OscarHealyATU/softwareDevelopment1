@@ -1,3 +1,4 @@
+package Lab_08;
 import java.util.Scanner;
 
 public class Pizza {
