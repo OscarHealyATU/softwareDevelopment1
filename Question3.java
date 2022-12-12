@@ -7,8 +7,6 @@ public class Question3 {
     public static void main(String[] args) {
 
         //variables
-        boolean q3 = false;
-        int count = 0;
         String ans;
 
          // input code
@@ -22,8 +20,8 @@ public class Question3 {
                 System.out.println("incorrect!");
                 break;
                 case "b":
-                count ++;
-                q3 = true;
+                
+                
                 System.out.println("correct!");
                 break;
                 case "c":

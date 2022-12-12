@@ -13,7 +13,7 @@ public class cipher {
         if (left) {
             shift = shift * -1;
         }
-        String answer; 
+        input.close();
         
         for (int i = 0; i < cipher.length(); i++) {
             int val;

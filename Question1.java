@@ -7,8 +7,6 @@ public class Question1 {
 
     public static void main(String[] args) {
         //variables
-        boolean q1 = false;
-        int count = 0;
         Scanner input = new Scanner(System.in);
         String ans;
 
@@ -21,10 +19,10 @@ public class Question1 {
 
         // Answer decision
         if (ans.equals("a")) {
-            q1 = true;
+          
             System.out.println("correct!");
         }else {
-            q1 = false;
+          
             System.out.println("incorrect!");
         }
         input.close();

@@ -6,8 +6,6 @@ public class Question2 {
 
     public static void main(String[] args) {
           //variables
-          boolean q2 = false;
-          int count = 0;
           String ans;
 
         // input code
@@ -17,8 +15,6 @@ public class Question2 {
 
         if (ans.equals("Scanner sc = new Scanner(System.in);")) {
         
-            q2 = true;
-            count ++;
             System.out.println("correct!");
         }else {
             System.out.println("incorrect!");

@@ -82,6 +82,8 @@ public class Grades {
         System.out.print("\nEnter grade for student " + studCount + " ");
         grade10 = input.nextInt();    
         
+        input.close();
+
         //total + average calculation
         total = (grade01 + grade02 + grade03 + grade04 + grade05 + grade06 + grade07 + grade08 + grade09 + grade10); 
         avg  = total / studCount;
