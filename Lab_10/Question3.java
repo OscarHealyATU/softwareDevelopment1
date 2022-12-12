@@ -1,3 +1,4 @@
+package Lab_10;
 import java.util.*;
 /**
  * Question3
