@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.jar.Attributes.Name;
 public class ScannerExample {
 
     public static void main (String[] args){

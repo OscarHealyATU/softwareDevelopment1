@@ -1,3 +1,4 @@
+package Lab_03;
 public class Shapes {
     
     public static void main(String[] args) {

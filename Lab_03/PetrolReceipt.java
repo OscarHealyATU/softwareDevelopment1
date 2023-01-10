@@ -1,3 +1,4 @@
+package Lab_03;
 public class PetrolReceipt {
 
     static String edge = "+-----------------------+";
