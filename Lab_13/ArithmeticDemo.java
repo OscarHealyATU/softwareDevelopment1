@@ -1,3 +1,4 @@
+package Lab_13;
 public class ArithmeticDemo {
     public static void main(String[] args) {
         int result = 1;

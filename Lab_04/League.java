@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import MiscProjects.shift;
-
 public class League {
     public static void main(String[] args) {
         
@@ -52,5 +50,7 @@ public class League {
         System.out.println("-------------------------");
         System.out.println("|1|" + team4 + "\t|" + points4 + "\t|");
         System.out.println("-------------------------");
+
+        input.close();
     }
 }

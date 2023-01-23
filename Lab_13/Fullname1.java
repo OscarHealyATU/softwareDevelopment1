@@ -1,3 +1,4 @@
+package Lab_13;
 import java.util.Scanner;
 
 public class Fullname1 {
@@ -6,12 +7,8 @@ public class Fullname1 {
         System.out.println("Enter first name");
         String fname = input.next();
         System.out.println("Enter surname");
-        String sName = " " + input.next();
-
-        ;
-
+        String sName = " " + input.next();      
         System.out.println(fname.concat(sName));
-
-        
+        input.close();
     }
 }

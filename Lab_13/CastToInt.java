@@ -1,3 +1,4 @@
+package Lab_13;
 public class CastToInt {
     public static void main(String[] args) {
         double a = (int)5, b = (int)8;
