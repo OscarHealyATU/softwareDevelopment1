@@ -12,7 +12,6 @@ public class Arithmetic {
             d = input.nextInt(), 
             e = input.nextInt();
 
-        
             System.out.println("Value of a, "+a+", after adding "+(a+=9));
             System.out.println("Value of a, "+b+", after subtracting "+(b-=4));
             System.out.println("Value of a, "+c+", after multiplying "+(c*=3));
