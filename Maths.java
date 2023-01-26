@@ -13,6 +13,8 @@ public class Maths {
         System.out.print("1. Addition\n2. Subrtaction\n3. Multiplication\n4. Division\nEnter choice (1-4): ");
         choice = input.nextInt();
 
+        input.close();
+
         switch (choice) {
             case 1:
                 result = value1 + value2;
@@ -35,6 +37,5 @@ public class Maths {
             System.out.println("invalid choice");
                 break;
         }
-        System.out.println();
     }
 }
