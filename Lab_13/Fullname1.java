@@ -7,8 +7,8 @@ public class Fullname1 {
         System.out.println("Enter first name");
         String fname = input.next();
         System.out.println("Enter surname");
-        String sName = " " + input.next();      
-        System.out.println(fname.concat(sName));
+        String sName = input.next();      
+        System.out.println(fname.concat(" ").concat(sName));
         input.close();
     }
 }
