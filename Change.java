@@ -17,7 +17,6 @@ public class Change {
         input.close();
         
         total =  (fifty + twenty + ten + five)/100;
-        // total/=100;
         System.out.println("Total amount of money: €"+ String.format("%.2f", total));
     }
 }
