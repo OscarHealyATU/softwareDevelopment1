@@ -1,3 +1,4 @@
+import java.nio.file.WatchService;
 import java.util.Scanner;
 
 public class Swap {
@@ -7,7 +8,12 @@ public class Swap {
         String a = input.next();
         System.out.println("Enter String value for b.");
         String b = input.next();
-        System.out.println("Strings before swap a = " + a + "and b = " + b);
+        System.out.println("Strings before swap a = " + a + " and b = " + b);
+        input.close();
 
+        a+= b;
+        b = a.substring(0,a.length()-b.length());
+        a = a.substring(b.length(),a.length());
+        System.out.println("Strings after swap a = " + a + " and b = " + b);
     }
 }
