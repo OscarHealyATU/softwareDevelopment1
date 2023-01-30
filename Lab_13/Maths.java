@@ -1,3 +1,5 @@
+package Lab_13;
+
 import java.util.Scanner;
 
 public class Maths {
