@@ -1,3 +1,5 @@
+package Semester_01.Lab_04;
+
 import java.util.Scanner;
 
 public class League {
