@@ -1,4 +1,3 @@
-import java.nio.file.WatchService;
 import java.util.Scanner;
 
 public class Swap {
