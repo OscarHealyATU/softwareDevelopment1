@@ -1,8 +1,6 @@
+package Semester_01.Lab_06;
 import java.util.Scanner;
 
-/**
- * Square
- */
 public class Square {
 
     public static void main(String[] args) {

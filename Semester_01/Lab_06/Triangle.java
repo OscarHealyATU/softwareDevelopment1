@@ -1,3 +1,4 @@
+package Semester_01.Lab_06;
 import java.util.Scanner;
 
 public class Triangle {
