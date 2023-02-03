@@ -8,13 +8,14 @@ public class GeometryApp {
         int length,
             width,
             area, 
-            perim,
             height,
             radius; 
             
         //headings
         System.out.println("Welcome to Geometry App!");
+        System.out.println("**Shapes**");
         System.out.println("Use this app to calculate the area of Rectangles, Circles, Triangles, and Squares.");
+        
         //calculations - rectangle
         System.out.print("\nEnter the length of the rectangle: ");
         length = input.nextInt();
@@ -22,16 +23,19 @@ public class GeometryApp {
         width = input.nextInt();
         area = length*width;
         System.out.println("Area of the rectangle: " + area);
+
         // circle
         System.out.print("enter the radius of the circle: ");
         radius = input.nextInt();     
         circArea = Math.PI*radius*radius;
         System.out.println("Area of circle is: " + circArea);
+
         //square
         System.out.print("\nEnter the length and width of the square: ");
         length = input.nextInt();
         area = length*length;
         System.out.println("Area of a square: " + area);
+
         //triangle
         System.out.print("enter length for base: ");
         length = input.nextInt();
