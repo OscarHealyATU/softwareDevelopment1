@@ -12,7 +12,7 @@ public class Sales {
             double  item1 = 239.99, 
                     item2 = 129.75, 
                     item3 = 99.96, 
-                    item4 = 350.56;
+                    item4 = 350.89;
 
             System.out.print("Enter number sold of item 1 ");
             item1 *= input.nextDouble();
@@ -29,7 +29,8 @@ public class Sales {
             commision  = (sales*0.09) + 200;
             teamCom += commision;
 
-            System.out.println("Total sales : " + Math.round(sales) + "\nComission: €" + Math.round(commision) + "\n");
+            System.out.println("Total sales made : €" + Math.round(sales)
+             + "\nComission: €" + Math.round(commision) + "\n");
         }
         input.close();
         System.out.println("Team Sales €" + Math.round(teamSales));
