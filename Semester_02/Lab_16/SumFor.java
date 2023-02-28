@@ -1,3 +1,4 @@
+package Semester_02.Lab_16;
 import java.util.Scanner;
 
 public class SumFor {

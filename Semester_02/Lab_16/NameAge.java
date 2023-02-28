@@ -1,6 +1,5 @@
-/**
- * NameAge
- */
+package Semester_02.Lab_16;
+
 public class NameAge {
 
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package Semester_02.Lab_16;
+
 public class Odd { 
     public static void main(String[] args) { 
         int sum=0;
