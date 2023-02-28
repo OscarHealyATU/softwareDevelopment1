@@ -1,5 +1,6 @@
-
+package Semester_02.Lab_17;
 import java.util.Scanner;
+
 public class SumAgain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

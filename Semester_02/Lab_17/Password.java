@@ -1,3 +1,4 @@
+package Semester_02.Lab_17;
 import java.util.Scanner;
 
 public class Password {
