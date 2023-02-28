@@ -7,6 +7,7 @@ public class LargeSmall {
         while (i == 1) {
             System.out.print("enter number: ");
             num = input.nextInt();
+            input.close();
             if (large < num) {
                 large = num;
                 System.out.println("large: " + num);

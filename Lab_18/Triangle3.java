@@ -11,7 +11,7 @@ public class Triangle3 {
         
         for (int row = height; row >= 0; row--) {
             triangle+="\n"; // new row
-            for (int column = 0; column < row; column++) 
+            for (int column = 0; column < row; column++) {
                 triangle+="+"; // prints x number of pluses based on the row number
             }   
             
