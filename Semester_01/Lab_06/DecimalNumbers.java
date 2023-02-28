@@ -14,6 +14,6 @@ public class DecimalNumbers {
         
         input.close();
 
-        //System.out.printf("Numbers entered were %d%n" + number1 + " and " + number2);
+        System.out.print("Numbers entered were " + number1 + " and " + number2);
     }
 }
