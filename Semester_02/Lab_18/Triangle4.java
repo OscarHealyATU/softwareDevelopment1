@@ -1,4 +1,4 @@
-package Semester_02.Lab_18;
+package Lab_18;
 import java.util.Scanner;
 
 public class Triangle4 {
