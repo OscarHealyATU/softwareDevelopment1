@@ -68,8 +68,9 @@ public class CountTill {
                 takings -= 0.10;
                 cent10++;
               } else if (takings >= 0.05) {
-                takings = 0;
+                takings -=0.05;
                 cent5++;
+              } else {
                 break;
               }
 
@@ -79,7 +80,7 @@ public class CountTill {
         System.out.println("Total: " + total + " euros");
         System.out.println("Takings: " + totalTaking + " euros");
         System.out.println("Take: ");
-        System.out.println(euro100 + "\n" + euro50 + "\n" + euro20 + "\n" + euro10 + "\n" + euro5 + "\n" 
+        System.out.println("100 notes:  " + euro100 + "\n" + euro50 + "\n" + euro20 + "\n" + euro10 + "\n" + euro5 + "\n" 
             + euro2 + "\n" + euro1 + "\n" + cent50 + "\n" + cent20 + "\n" + cent10+ "\n" + cent5 + "\n");
     }
 }
