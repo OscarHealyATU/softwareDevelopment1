@@ -7,15 +7,13 @@ public class NestedLoopThrees {
         Scanner input = new Scanner(System.in);
         int length = 0;
         int ans = 0;
-        do {
-            
+        do { 
             System.out.print("You have " + (length+1) + " rows, need another? Enter 0 for no: ");
             ans = input.nextInt();
             length++;
         } while (ans != 0); input.close();
 
         String output = "";
-        
         for (int i = 0; i < length; i++) { //rows
             for (int j = 0; j < 5; j++) { // columns
                 output+="3";
