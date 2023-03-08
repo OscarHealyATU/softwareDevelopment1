@@ -9,27 +9,38 @@ public class CountTill {
 
         // Get the number of coins of each denomination
         System.out.print("Enter 5 cent coins: ");
-        total += input.nextDouble() * 0.05;
+        cent5 = input.nextDouble();
+        total += cent5 * 0.05;
         System.out.print("Enter 10 cent coins: ");
-        total += input.nextDouble() * 0.10;
+        cent10 += input.nextDouble();
+        total += cent10 *0.10;
         System.out.print("Enter 20 cent coins: ");
-        total += input.nextDouble() * 0.20;
+        cent20 = input.nextDouble();
+        total += cent20* 0.20;
         System.out.print("Enter 50 cent coins: ");
-        total += input.nextDouble() * 0.50;
+        cent50 += input.nextDouble();
+        total += cent50 * 0.50;
         System.out.print("Enter 1 euro coins: ");
-        total += input.nextDouble();
+        euro1 += input.nextDouble();
+        total += euro1;
         System.out.print("Enter 2 euro coins: ");
-        total += input.nextDouble() * 2;
+        euro2 += input.nextDouble();
+        total += euro2 * 2;
         System.out.print("Enter 5 euro notes: ");
-        total += input.nextDouble() * 5;
+        euro5 += input.nextDouble();
+        total += euro5 * 5;
         System.out.print("Enter 10 euro notes: ");
-        total += input.nextDouble() * 10;
+        euro10 += input.nextDouble();
+        total += euro10 * 10;
         System.out.print("Enter 20 euro notes: ");
-        total += input.nextDouble() * 20;
+        euro20 += input.nextDouble();
+        total += euro20 * 20;
         System.out.print("Enter 50 euro notes: ");
-        total += input.nextDouble() * 50;
+        euro50 += input.nextDouble();
+        total += euro50 * 50;
         System.out.print("Enter 100 euro notes: ");
-        total += input.nextDouble() * 100;
+        euro100 += input.nextDouble();
+        total += euro100 * 100;
         input.close();
                
         // Calculate the amount of float
