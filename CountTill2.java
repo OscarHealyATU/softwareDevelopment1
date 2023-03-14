@@ -40,5 +40,6 @@ public class CountTill2 {
                 System.out.println(changeCounts[i] + " x " + denominations[i] + " euro coins/notes");
             }
         }
+        input.close();
     }
 }
