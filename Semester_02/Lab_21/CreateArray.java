@@ -10,7 +10,6 @@ public class CreateArray {
         int type = input.nextInt();
         System.out.print("how many values do you need to store in the array: ");
         int length = input.nextInt();
-        int output = "";
         if (type == 1) {
             int[] values = new int[length]; 
             for (int i = 0; i < values.length; i++) {
