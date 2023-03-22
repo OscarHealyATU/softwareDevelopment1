@@ -9,7 +9,6 @@ public class EightArray {
         int number = input.nextInt(); input.close();
         
         int[] x = {23,104,3,65,1002,90000,77,88,99,10};
-        int[] y = new int[x.length-1];
         boolean checker = false;
         int flag = -1;
         
@@ -20,7 +19,7 @@ public class EightArray {
                 flag = i;
             }
         }
-        
+        int[] y = new int[x.length-1];
         // if number is in array pass to new array
         if (!checker) System.out.println("Number not found");
          else {
