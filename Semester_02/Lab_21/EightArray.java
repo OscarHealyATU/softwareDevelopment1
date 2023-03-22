@@ -10,8 +10,8 @@ public class EightArray {
         
         int[] x = {23,104,3,65,1002,90000,77,88,99,10};
         int[] y = new int[x.length-1];
-        int flag = -1;
         boolean checker = false;
+        int flag = -1;
         
         // check if number is in array
         for (int i = 0; i < x.length; i++) {
@@ -20,20 +20,17 @@ public class EightArray {
                 flag = i;
             }
         }
+        
         // if number is in array pass to new array
-        if (checker) {
+        if (!checker) System.out.println("Number not found");
+         else {
             int count = 0;
             for (int i = 0; i < y.length; i++) {
                 if (count == flag) count++;
                 y[i] = x[count]; 
                 count++;
+                System.out.println(i+"\t"+y[i]);
             }
-        } else {
-            System.out.println("Number not found");
         }
-        for (int i = 0; i < y.length; i++) {
-            System.out.println(i+"\t"+y[i]);
-        }
-
     }
 }
