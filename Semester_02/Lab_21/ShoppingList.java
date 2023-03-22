@@ -6,7 +6,7 @@ public class ShoppingList {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("How many items do you want to add:");
-        String[] items = new String[input.nextInt()];
+        String[] items = new String[input.nextInt()-1];
         
         for (int i = 0; i < items.length; i++) {
             System.out.print("Add item " + (i+1)+ " to the list: ");
