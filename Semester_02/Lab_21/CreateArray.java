@@ -9,7 +9,7 @@ public class CreateArray {
         System.out.print("Enter 1 for int and 2 for double array: ");
         int type = input.nextInt();
         System.out.print("how many values do you need to store in the array: ");
-        int length = input.nextInt();
+        int length = input.nextInt(); input.close();
         if (type == 1) {
             int[] values = new int[length]; 
             for (int i = 0; i < values.length; i++) {
@@ -18,7 +18,8 @@ public class CreateArray {
             }
             System.out.println("values in array: ");
             for (int i = 0; i < values.length; i++) {
-                System.out.print(values[i] + ", ");
+                System.out.print(values[i]);
+                if (i != values.length -1)  System.out.print(", ");
             }
         } else if (type == 2) {
             double[] values = new double[length]; 
@@ -28,7 +29,8 @@ public class CreateArray {
             }  
             System.out.println("values in array: ");
             for (int i = 0; i < values.length; i++) {
-                System.out.print(values[i] + ", ");
+                System.out.print(values[i]);
+                if (i != values.length-1)  System.out.print(", ");
             }
             
         }
