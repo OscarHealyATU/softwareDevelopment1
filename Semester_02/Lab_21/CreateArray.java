@@ -14,8 +14,11 @@ public class CreateArray {
             int[] values = new int[length]; 
             for (int i = 0; i < values.length; i++) {
                 System.out.print("Enter value"+(i+1)+": ");
-                values[i] = input.nextInt();
-                
+                values[i] = input.nextInt(); 
+            }
+            System.out.println("values in array: ");
+            for (int i = 0; i < values.length; i++) {
+                System.out.print(values[i] + ", ");
             }
         } else if (type == 2) {
             double[] values = new double[length]; 
@@ -23,7 +26,14 @@ public class CreateArray {
                 System.out.print("Enter value"+(i+1)+": ");
                 values[i] = input.nextDouble();
             }  
+            System.out.println("values in array: ");
+            for (int i = 0; i < values.length; i++) {
+                System.out.print(values[i] + ", ");
+            }
+            
         }
+
+        
 
     }
 }
