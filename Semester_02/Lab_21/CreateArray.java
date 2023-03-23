@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CreateArray {
     public static void main(String[] args) {
-        
+
         Scanner input = new Scanner(System.in);
 
         System.out.println("int or double array?");
@@ -34,7 +34,7 @@ public class CreateArray {
                 System.out.print("Enter value"+(i+1)+": ");
                 values[i] = input.nextDouble();
             }  
-            System.out.println("values in array: ");
+            System.out.println("\nvalues in array: \n");
             for (int i = 0; i < values.length; i++) {
                 System.out.print(values[i]);
                 if (i != values.length-1)  System.out.print(", ");
