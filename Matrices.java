@@ -34,8 +34,9 @@ public class Matrices {
             matrixResult = calc.subMatrix(matrix);// not done
                 break;
             case 4: // determinant
-            if (matrix.length > 2)  matrixResult = calc.determinant3(matrix);
+            if (matrix.length > 2)  determinant = calc.determinant3(matrix);
             else determinant = calc.determinant2(matrix);
+            System.out.print("Determinant is: " + determinant);
                 break;
             case 5: // inverse
             matrixResult = calc.subMatrix(matrix);
@@ -117,21 +118,25 @@ public class Matrices {
         int tl, tm, tr;
         int ml, mm, mr;
         int bl, bm, br;
+        int det = 0;
 
         tl = matrix[0][0] * ((matrix[1][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]));
         tm = matrix[0][1] * ((matrix[1][0]*matrix[2][2])-(matrix[2][0]*matrix[1][2]));
         tr = matrix[0][2] * ((matrix[1][0]*matrix[2][1])-(matrix[2][0]*matrix[1][1]));
 
-        ml = matrix[1][0] * ((matrix[0][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]));
-        mm = matrix[1][1] * ((matrix[1][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]));
-        mr = matrix[1][2] * ((matrix[1][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]));
+        ml = matrix[1][0] * ((matrix[0][1]*matrix[2][2])-(matrix[2][1]*matrix[0][2]));
+        mm = matrix[1][1] * ((matrix[0][0]*matrix[2][2])-(matrix[2][0]*matrix[0][2]));
+        mr = matrix[1][2] * ((matrix[0][0]*matrix[2][1])-(matrix[2][0]*matrix[0][1]));
 
-        bl = matrix[2][0] * ((matrix[1][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]));
-        bm = matrix[2][1] * ((matrix[1][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]));
-        br = matrix[2][2] * ((matrix[1][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]));
+        bl = matrix[2][0] * ((matrix[0][1]*matrix[1][2])-(matrix[1][1]*matrix[0][2]));
+        bm = matrix[2][1] * ((matrix[0][0]*matrix[1][2])-(matrix[1][0]*matrix[0][2]));
+        br = matrix[2][2] * ((matrix[0][0]*matrix[1][1])-(matrix[1][0]*matrix[0][1]));
         
-        int determinant = 0;
-        return determinant;
+        det = tl - tm + tr 
+            - ml + mm - mr 
+            + bl - bm + br;
+        
+        return det;
      }
 
     // takes in matrix array and prints an output
