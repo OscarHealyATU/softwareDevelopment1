@@ -25,7 +25,7 @@ public class Matrices {
         for (int i = 0; i < matrix.length; i++) {
 
             for (int j = 0; j < matrix.length; j++) {
-            System.out.print("enter a number: ");
+            System.out.print("enter a value for row " + (i+1) + ", column" + (j+1) + ": ");
              matrix[i][j] = input.nextInt();       
             }
         }
