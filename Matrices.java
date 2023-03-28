@@ -18,14 +18,15 @@ public class Matrices {
         // subtraction
         // multiply
 
-        // matrix arrays
+        // matrix array declaration
         int[][] matrix = new int[height][width];
         int[][] matrixResult = new int[height][width];
-        
+        // populating matrix
+        System.out.println("\nEnter a value for:");
         for (int i = 0; i < matrix.length; i++) {
 
             for (int j = 0; j < matrix.length; j++) {
-            System.out.print("enter a value for row " + (i+1) + ", column" + (j+1) + ": ");
+            System.out.print("row " + (i+1) + ", column" + (j+1) + ": ");
              matrix[i][j] = input.nextInt();       
             }
         }
