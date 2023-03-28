@@ -4,29 +4,25 @@ import java.util.Scanner;
 
 public class Reverse {
     public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
-    Reverse r = new Reverse();
+        Reverse r = new Reverse();
+        Scanner input = new Scanner(System.in);
 
-    System.out.print("Enter a number to be reversed: ");
-    int number = /*input.nextInt();*/ 1234;
-    int result = r.reverse(number);
-    System.out.println("reversed number is " + result);
-
-    //int result = r.reverse(input.nextInt());
-    //System.out.println("reversed number is " + result);
-    //System.out.println("reversed number is " + r.reverse(input.nextInt()));
-        
+        System.out.print("Enter a number to be reversed: ");
+        System.out.println("reversed number is " + r.reverse(input.nextInt()));
+        input.close();
     }
     int reverse(int x){
-        int magnitude = 1, count = 0;
-        while (magnitude < x) {
-            count++;
-            magnitude*=10;
-        }  
-        int[] number = new int[count];     
+        int y, z =0, magnitude = 1, count = 0;
+
+        while (magnitude < x) { count++; magnitude*=10; }
+        magnitude/=10;  
+
         for (int i = 0; i < count; i++) {
-            
-        }
-        return x;
+            y = x % 10;
+            z+=y*magnitude;
+            magnitude/=10;
+            x/=10;
+        }      
+        return z;
     }
 }
