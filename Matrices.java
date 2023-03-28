@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import Lab_22.PrintArray;
-
 public class Matrices {
 
     public static void main(String[] args) {
@@ -77,7 +75,7 @@ public class Matrices {
         
         return matrix;
     }
-
+    // adds one matrix to another
     int[][] addMatrix(int[][]matrix){
         int[][] secondMatrix = createArray(matrix.length, matrix[0].length);
         for (int i = 0; i < matrix.length; i++) {
@@ -87,6 +85,7 @@ public class Matrices {
         }
         return matrix;
     }
+    // subtracts one matrix from another
     int[][] subMatrix(int[][]matrix){
         int[][] secondMatrix = createArray(matrix.length, matrix[0].length);
         for (int i = 0; i < matrix.length; i++) {
@@ -96,6 +95,7 @@ public class Matrices {
         }
         return matrix;
     }
+    // multiplies one matrix by another
     int[][] multMatrix(int[][]matrix){
         return matrix;
     }
