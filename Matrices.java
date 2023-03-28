@@ -21,24 +21,24 @@ public class Matrices {
         System.out.print("Select an option: ");
         int selection = input.nextInt();
         switch (selection) {
-            case 1:
+            case 1: // Addition
             matrixResult = calc.addMatrix(matrix);
             calc.PrintArray(matrixResult);
                 break;
-            case 2:
+            case 2: // subtraction
             matrixResult = calc.subMatrix(matrix);
             calc.PrintArray(matrixResult);
                 break;
-            case 3:
+            case 3: // multiplication
+            matrixResult = calc.subMatrix(matrix);// not done
+                break;
+            case 4: // determinant
             matrixResult = calc.subMatrix(matrix);
                 break;
-            case 4:
+            case 5: // inverse
             matrixResult = calc.subMatrix(matrix);
                 break;
-            case 5:
-            matrixResult = calc.subMatrix(matrix);
-                break;
-            case 6:
+            case 6: // transpose
             matrixResult = calc.subMatrix(matrix);
                 break;
         
@@ -97,6 +97,10 @@ public class Matrices {
     }
     // multiplies one matrix by another
     int[][] multMatrix(int[][]matrix){
+        return matrix;
+    }
+    // calculates determinant
+    int[][] determinant(int[][]matrix){
         return matrix;
     }
 
