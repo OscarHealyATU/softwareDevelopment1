@@ -14,12 +14,13 @@ public class Matrices {
         
         // matrix output
         calc.PrintArray(matrix);
-        System.out.println("1. addition\n"
-                        +"2. subtraction\n"
-                        +"3. mulitplication\n"
-                        +"4. determinant\n"
-                        +"5. transpose\n"
-                        +"6. inverse\n");
+        System.out.println("1. Addition\n"
+                        +"2. Subtraction\n"
+                        +"3. Mulitplication\n"
+                        +"4. Determinant\n"
+                        +"5. Transpose\n"
+                        +"6. Inverse\n"
+                        +"7. Quit\n");
         System.out.print("Select an option: ");
         int selection = input.nextInt();
 
@@ -44,6 +45,10 @@ public class Matrices {
             case 6: // transpose
             matrix = calc.subMatrix(matrix);
                 break;
+
+            case 7: // quit
+                System.out.println("Goodbye.");
+                    break;
         
             default:
             System.out.println("invalid choice");
@@ -74,7 +79,7 @@ public class Matrices {
 
     // adds one matrix to another
     int[][] addMatrix(int[][]matrix){
-        int[][] secondMatrix = createArray(matrix.length, matrix[0].length);
+        int[][] secondMatrix = createArray(matrix[0].length,matrix.length);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 matrix[i][j] += secondMatrix[i][j];
@@ -85,7 +90,7 @@ public class Matrices {
 
     // subtracts one matrix from another
     int[][] subMatrix(int[][]matrix){
-        int[][] secondMatrix = createArray(matrix.length, matrix[0].length);
+        int[][] secondMatrix = createArray(matrix[0].length,matrix.length);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 matrix[i][j] -= secondMatrix[i][j];
@@ -96,8 +101,20 @@ public class Matrices {
 
     // multiplies one matrix by another
     int[][] multMatrix(int[][]matrix, int mHeight){
-       return matrix;
-       
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a width ");
+        int newWidth = input.nextInt();
+        int[][] newMatrix = createArray(matrix[0].length,newWidth);
+        int[][] ansMatrix = new int[2][3];
+
+       for (int i = 0; i < ansMatrix.length; i++) {
+           for (int j = 0; j < ansMatrix[i].length; j++) {
+            ansMatrix[i][j] = (matrix[i][0]*newMatrix[0][j])
+                            + (matrix[i][1]*newMatrix[1][j])
+                            + (matrix[i][2]*newMatrix[2][j]); 
+            }  
+        }
+        return ansMatrix;
     }
 
     // calculates 2x2 determinant |A| = (a*d)-(b*c)
