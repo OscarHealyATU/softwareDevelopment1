@@ -124,29 +124,28 @@ public class Matrices {
         tm = matrix[0][1] * ((matrix[1][0]*matrix[2][2])-(matrix[2][0]*matrix[1][2]));
         tr = matrix[0][2] * ((matrix[1][0]*matrix[2][1])-(matrix[2][0]*matrix[1][1]));
 
-        ml = matrix[1][0] * ((matrix[0][1]*matrix[2][2])-(matrix[2][1]*matrix[0][2]));
+    /*  ml = matrix[1][0] * ((matrix[0][1]*matrix[2][2])-(matrix[2][1]*matrix[0][2]));
         mm = matrix[1][1] * ((matrix[0][0]*matrix[2][2])-(matrix[2][0]*matrix[0][2]));
         mr = matrix[1][2] * ((matrix[0][0]*matrix[2][1])-(matrix[2][0]*matrix[0][1]));
 
         bl = matrix[2][0] * ((matrix[0][1]*matrix[1][2])-(matrix[1][1]*matrix[0][2]));
         bm = matrix[2][1] * ((matrix[0][0]*matrix[1][2])-(matrix[1][0]*matrix[0][2]));
         br = matrix[2][2] * ((matrix[0][0]*matrix[1][1])-(matrix[1][0]*matrix[0][1]));
-        
-        det = tl - tm + tr 
-            - ml + mm - mr 
-            + bl - bm + br;
-        
+        */
+        det = tl - tm + tr; 
+            
         return det;
      }
 
     // takes in matrix array and prints an output
     void PrintArray(int[][]matrix){
-        System.out.println(" Output:\n-----------\n");
+        System.out.println(" Output:\n-----------");
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print("[" + matrix[i][j] + "] ");
             }
             System.out.println();
         }
+        System.out.println();
     }
 }
