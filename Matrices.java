@@ -1,37 +1,35 @@
 import java.util.Scanner;
 
 public class Matrices {
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Matrices calc = new Matrices();     
 
-        System.out.print("Enter Matrix height: ");
-        int height = input.nextInt();
-        System.out.print("Enter Matrix width: ");
-        int width = input.nextInt(); 
-
-        int[][] matrix = calc.createArray(width,height);
-        int[][] matrixResult = matrix;
+        System.out.print("Enter Matrix size: ");
+        int size = input.nextInt();
+        int[][] matrix = calc.createArray(size,size);
         int  determinant = 0;
 
          // matrix output
          calc.PrintArray(matrix);
-        System.out.println("1. addition\n2. subtraction\n3. mulitplication\n"
-                        +"4. determinant\n5. transpose\n6. inverse\n");
+        System.out.println("1. addition\n"
+                        +"2. subtraction\n"
+                        +"3. mulitplication\n"
+                        +"4. determinant\n"
+                        +"5. transpose\n"
+                        +"6. inverse\n");
         System.out.print("Select an option: ");
         int selection = input.nextInt();
+
         switch (selection) {
             case 1: // Addition
-            matrixResult = calc.addMatrix(matrix);
-            calc.PrintArray(matrixResult);
+            calc.PrintArray(calc.addMatrix(matrix));
                 break;
             case 2: // subtraction
-            matrixResult = calc.subMatrix(matrix);
-            calc.PrintArray(matrixResult);
+            calc.PrintArray(calc.subMatrix(matrix));
                 break;
             case 3: // multiplication
-            matrixResult = calc.subMatrix(matrix);// not done
+            // not done
                 break;
             case 4: // determinant
             if (matrix.length > 2)  determinant = calc.determinant3(matrix);
@@ -39,24 +37,18 @@ public class Matrices {
             System.out.print("Determinant is: " + determinant);
                 break;
             case 5: // inverse
-            matrixResult = calc.subMatrix(matrix);
+            matrix = calc.subMatrix(matrix);
                 break;
             case 6: // transpose
-            matrixResult = calc.subMatrix(matrix);
+            matrix = calc.subMatrix(matrix);
                 break;
         
             default:
             System.out.println("invalid choice");
                 break;
         }
-        // addition adds 2 matrices of the same size
-        //matrixResult = calc.createArray();
-        // solve
-        // determinant
         // inverse
         // transpose
-        
-        // subtraction
         // multiply
         input.close();
     }
@@ -115,10 +107,9 @@ public class Matrices {
       20-21-22
       */
     int determinant3(int[][]matrix){
-        int tl, tm, tr;
-        int ml, mm, mr;
-        int bl, bm, br;
-        int det = 0;
+        int tl, tm, tr,det = 0;
+        /*int ml, mm, mr;
+        int bl, bm, br;*/
 
         tl = matrix[0][0] * ((matrix[1][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]));
         tm = matrix[0][1] * ((matrix[1][0]*matrix[2][2])-(matrix[2][0]*matrix[1][2]));
@@ -133,7 +124,6 @@ public class Matrices {
         br = matrix[2][2] * ((matrix[0][0]*matrix[1][1])-(matrix[1][0]*matrix[0][1]));
         */
         det = tl - tm + tr; 
-            
         return det;
      }
 
