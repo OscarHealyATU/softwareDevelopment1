@@ -5,13 +5,15 @@ public class Matrices {
         Scanner input = new Scanner(System.in);
         Matrices calc = new Matrices();     
 
-        System.out.print("Enter Matrix size: ");
-        int size = input.nextInt();
-        int[][] matrix = calc.createArray(size,size);
+        System.out.print("Enter Matrix width: ");
+        int width = input.nextInt();
+        System.out.print("Enter Matrix height: ");
+        int height = input.nextInt();
+        int[][] matrix = calc.createArray(width,height);
         int  determinant = 0;
-
-         // matrix output
-         calc.PrintArray(matrix);
+        
+        // matrix output
+        calc.PrintArray(matrix);
         System.out.println("1. addition\n"
                         +"2. subtraction\n"
                         +"3. mulitplication\n"
@@ -29,7 +31,7 @@ public class Matrices {
             calc.PrintArray(calc.subMatrix(matrix));
                 break;
             case 3: // multiplication
-            // not done
+            calc.PrintArray(calc.multMatrix(matrix, width));
                 break;
             case 4: // determinant
             if (matrix.length > 2)  determinant = calc.determinant3(matrix);
@@ -67,9 +69,9 @@ public class Matrices {
             }
             System.out.println();
         }
-        
         return matrix;
     }
+
     // adds one matrix to another
     int[][] addMatrix(int[][]matrix){
         int[][] secondMatrix = createArray(matrix.length, matrix[0].length);
@@ -80,6 +82,7 @@ public class Matrices {
         }
         return matrix;
     }
+
     // subtracts one matrix from another
     int[][] subMatrix(int[][]matrix){
         int[][] secondMatrix = createArray(matrix.length, matrix[0].length);
@@ -90,26 +93,22 @@ public class Matrices {
         }
         return matrix;
     }
+
     // multiplies one matrix by another
-    int[][] multMatrix(int[][]matrix){
-        return matrix;
+    int[][] multMatrix(int[][]matrix, int mHeight){
+       return matrix;
+       
     }
-    // calculates 2x2 determinant
+
+    // calculates 2x2 determinant |A| = (a*d)-(b*c)
     int determinant2(int[][]matrix){
-        //|A| = (a*d)-(b*c)
         int determinant = (matrix[0][0]*matrix[1][1]) - (matrix[0][1]*matrix[1][0]);
         return determinant;
      }
-     // calculates 3x3 determinant
-     /*
-      00-01-02
-      10-11-12
-      20-21-22
-      */
+
+    // calculates 3x3 determinant 
     int determinant3(int[][]matrix){
-        int tl, tm, tr,det = 0;
-        /*int ml, mm, mr;
-        int bl, bm, br;*/
+        int tl, tm, tr,det = 0;/*int ml, mm, mr, bl, bm, br;*/
 
         tl = matrix[0][0] * ((matrix[1][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]));
         tm = matrix[0][1] * ((matrix[1][0]*matrix[2][2])-(matrix[2][0]*matrix[1][2]));
