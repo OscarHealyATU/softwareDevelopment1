@@ -39,13 +39,12 @@ public class Matrices {
             else determinant = calc.determinant2(matrix);
             System.out.print("Determinant is: " + determinant);
                 break;
-            case 5: // inverse
-            matrix = calc.subMatrix(matrix);
+            case 5: // transpose
+            calc.PrintArray(calc.transpose(matrix));
                 break;
-            case 6: // transpose
-            matrix = calc.subMatrix(matrix);
-                break;
-
+            case 6: // inverse
+                matrix = calc.subMatrix(matrix);
+                    break;
             case 7: // quit
                 System.out.println("Goodbye.");
                     break;
@@ -142,6 +141,16 @@ public class Matrices {
         det = tl - tm + tr; 
         return det;
      }
+
+    int[][] transpose(int[][] matrix){
+        int[][] newMatrix = new int[matrix[0].length][matrix.length];
+        for (int i = 0; i < newMatrix.length; i++) {
+           for (int j = 0; j < newMatrix[i].length; j++) {
+            newMatrix[j][i] = matrix[i][j]
+           } 
+        }
+        return newMatrix;
+    }
 
     // takes in matrix array and prints an output
     void PrintArray(int[][]matrix){
