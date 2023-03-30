@@ -144,10 +144,10 @@ public class Matrices {
 
     int[][] transpose(int[][] matrix){
         int[][] newMatrix = new int[matrix[0].length][matrix.length];
-        for (int i = 0; i < newMatrix.length; i++) {
-           for (int j = 0; j < newMatrix[i].length; j++) {
-            newMatrix[j][i] = matrix[i][j]
-           } 
+        for (int i = 0; i < newMatrix[0].length; i++) {
+           for (int j = 0; j < newMatrix.length; j++) {
+            newMatrix[j][i] = matrix[i][j];
+           }
         }
         return newMatrix;
     }
