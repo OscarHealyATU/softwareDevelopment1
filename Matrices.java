@@ -233,6 +233,6 @@ public class Matrices {
             }
             System.out.println();
         }
-        System.out.println();
+        System.out.println();System.out.println();
     }
 }
