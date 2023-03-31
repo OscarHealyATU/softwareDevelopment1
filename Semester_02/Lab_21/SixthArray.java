@@ -9,7 +9,7 @@ public class SixthArray {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter search number: ");
         int number = input.nextInt(), index = 0;
-        
+        input.close();
         for (int i = 0; i < x.length; i++) {
             if (x[i] == number) {
                 checker = true;
