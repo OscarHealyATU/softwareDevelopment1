@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class multMatrix {
     public static void main(String[] args) {
 

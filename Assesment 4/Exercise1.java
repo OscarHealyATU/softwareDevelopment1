@@ -15,7 +15,7 @@ public class Exercise1 {
          number4 = input.nextInt();
          input.close();
 
-         result = number1 * number4;
+         result = number1 * number4 + (number2*number3*0);
 
         System.out.println(number1 + " * " + number4 + " = " + result);
 

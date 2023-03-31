@@ -6,7 +6,7 @@ public class CountTill2 {
         double[] denominations = {1,2,5,10,20,50,100};
         double[] coin ={0,0,0,0,0,0,0};
         double total=0; 
-        double cashFloat = 300;
+        
         for (int i = 0; i < denominations.length; i++) {
             System.out.print("Enter €" + denominations[i] + " coins: ");
             coin[i] = input.nextDouble();   
