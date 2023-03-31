@@ -9,10 +9,7 @@ public class Matrices {
         int width = input.nextInt();
         System.out.print("Enter Matrix height: ");
         int height = input.nextInt();
-
-        double[][] invMatrix = new double[width][height];
         int[][] matrix = calc.createArray(width,height);
-        int  determinant = 0;
         int selection;
         boolean square = false, big = false;
         
@@ -48,13 +45,10 @@ public class Matrices {
                 calc.printArray(calc.transpose(matrix));
                     break;
                 case 5: // determinant
-                if (matrix.length > 2)  determinant = calc.determinant3(matrix);
-                else determinant = calc.determinant2(matrix);
-                System.out.print("Determinant is: " + determinant);
+                System.out.print("Determinant is: " + calc.determinant(matrix));
                     break;
                 case 6: // inverse
-
-                    System.out.println("Determinant is: " + calc.determinant3(matrix));
+                    System.out.println("Determinant is: " + calc.determinant(matrix));
                     System.out.println("cofactor");
                     calc.printArray(calc.cofactor(matrix));
                     System.out.println("transpose");
@@ -127,15 +121,12 @@ public class Matrices {
         }
         return ansMatrix;
     }
-
-    // calculates 2x2 determinant |A| = (a*d)-(b*c)
-    int determinant2(int[][]matrix){
-        int determinant = (matrix[0][0]*matrix[1][1]) - (matrix[0][1]*matrix[1][0]);
-        return determinant;
-     }
-
-    // calculates 3x3 determinant 
-    int determinant3(int[][]matrix){
+    // calculates determinant 
+    int determinant(int[][]matrix){
+        if (matrix.length == 2) { // calculates 2x2 determinant |A| = (a*d)-(b*c)
+            int determinant = (matrix[0][0]*matrix[1][1]) - (matrix[0][1]*matrix[1][0]);
+            return determinant; 
+        }
         int tl, tm, tr,det = 0;
 
         tl = matrix[0][0] * ((matrix[1][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]));
@@ -184,23 +175,17 @@ public class Matrices {
             matrix[0][1] *=-1;
             matrix[1][0] *=-1;
         }else {
-            
             matrix = calc.cofactor(matrix);
             matrix = calc.transpose(matrix);
-            
         }
-
         return matrix;
      }
     // calculates inverse of a matrix 
     double[][] inverse(int[][]matrix){
         Matrices calc = new Matrices();
         double[][] invMatrix = new double[matrix.length][matrix[0].length];
-        int det;
-
-        if (matrix.length == 2) {det = calc.determinant2(matrix);
-        }else {det = calc.determinant3(matrix); }
-          matrix = calc.cofactor(matrix);
+        double det = calc.determinant(matrix); 
+          matrix = calc.adjoint(matrix);
        
           if (det !=0) {
             for (int i = 0; i < matrix.length; i++) {
