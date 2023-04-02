@@ -10,7 +10,7 @@ public class Matrices {
         System.out.print("Enter Matrix height: ");
         int height = input.nextInt();
         int[][] matrix = calc.createArray(width,height);
-        int selection;
+        int selection, determinant =0;
         boolean square = false, big = false;
         
         calc.printArray(matrix); // matrix output
@@ -48,15 +48,20 @@ public class Matrices {
                 System.out.print("Determinant is: " + calc.determinant(matrix));
                     break;
                 case 6: // inverse
-                    System.out.println("Determinant is: " + calc.determinant(matrix));
-                    System.out.println("cofactor");
-                    calc.printArray(calc.cofactor(matrix));
-                    System.out.println("transpose");
-                    calc.printArray(calc.transpose(matrix));
-                    System.out.println("adjoint");
-                    calc.printArray(calc.adjoint(matrix));
-                    System.out.println("inverse");
-                    calc.printArray(calc.inverse(matrix));
+                    determinant = calc.determinant(matrix);
+                    System.out.println("determinant is " + determinant);
+                    if (determinant != 0) {
+                        System.out.println("determinant is " + determinant);
+                        System.out.println("cofactor");
+                        calc.printArray(calc.cofactor(matrix));
+                        System.out.println("transpose");
+                        calc.printArray(calc.transpose(matrix));
+                        System.out.println("adjoint");
+                        calc.printArray(calc.adjoint(matrix));
+                        System.out.println("inverse");
+                        calc.printArray(calc.inverse(matrix));
+                    } else System.out.println("Matrix not invertable");
+                    
                         break;            
                 default:
                 System.out.println("Not a valid option");
@@ -64,7 +69,7 @@ public class Matrices {
             }
         input.close();
     }
-
+//////////////////////////////////////////////////////////////////////////////////////
     // populating matrix
     int[][] createArray(int width, int height){
         Scanner input = new Scanner(System.in);
