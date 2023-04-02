@@ -171,7 +171,7 @@ public class Matrices {
         }
         return matrix;
      }
-    // calculates inverse of a matrix 
+    // calculates inverse of a matrix A^(-1) = 1/|A| Adj(A)
     double[][] inverse(int[][]matrix){
         Matrices calc = new Matrices();
         double[][] invMatrix = new double[matrix.length][matrix[0].length];
