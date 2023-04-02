@@ -70,23 +70,7 @@ public class Matrices {
         input.close();
     }
 //////////////////////////////////////////////////////////////////////////////////////
-    // populating matrix
-    int[][] createArray(int width, int height){
-        Scanner input = new Scanner(System.in);
-
-        int[][] matrix = new int[height][width];
-        System.out.println("\nEnter a value for:");
-
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-            System.out.print("row " + (i+1) + ", column" + (j+1) + ": ");
-             matrix[i][j] = input.nextInt();       
-            }
-            System.out.println();
-        }
-        return matrix;
-    }
-
+   
     // adds one matrix to another
     int[][] addMatrix(int[][]matrix){
         int[][] secondMatrix = createArray(matrix[0].length,matrix.length);
@@ -128,17 +112,19 @@ public class Matrices {
     }
     // calculates determinant 
     int determinant(int[][]matrix){
+        int determinant = 0;
         if (matrix.length == 2) { // calculates 2x2 determinant |A| = (a*d)-(b*c)
-            int determinant = (matrix[0][0]*matrix[1][1]) - (matrix[0][1]*matrix[1][0]);
+            determinant = (matrix[0][0]*matrix[1][1]) - (matrix[0][1]*matrix[1][0]);
             return determinant; 
-        }
-        int tl, tm, tr,det = 0;
+        } else {
+        int tl, tm, tr;
 
         tl = matrix[0][0] * ((matrix[1][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]));
         tm = matrix[0][1] * ((matrix[1][0]*matrix[2][2])-(matrix[2][0]*matrix[1][2]));
         tr = matrix[0][2] * ((matrix[1][0]*matrix[2][1])-(matrix[2][0]*matrix[1][1]));
-        det = tl - tm + tr; 
-        return det;
+        determinant = tl - tm + tr; 
+    }
+        return determinant;
      }
 
      int[][] cofactor(int[][] matrix){
@@ -202,7 +188,7 @@ public class Matrices {
         } else System.out.println("Determinant is 0 - inverse method");
         return invMatrix;
      }
-    
+    /////////////////////////////////////////////////////////////////////
     // takes in matrix array and prints an output
     void printArray(int[][]matrix){
         System.out.println(" Output:\n-----------");
@@ -224,5 +210,21 @@ public class Matrices {
             System.out.println();
         }
         System.out.println();
+    }
+     // populating matrix
+     int[][] createArray(int width, int height){
+        Scanner input = new Scanner(System.in);
+
+        int[][] matrix = new int[height][width];
+        System.out.println("\nEnter a value for:");
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+            System.out.print("row " + (i+1) + ", column" + (j+1) + ": ");
+             matrix[i][j] = input.nextInt();       
+            }
+            System.out.println();
+        }
+        return matrix;
     }
 }
