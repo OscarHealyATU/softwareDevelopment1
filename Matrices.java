@@ -9,10 +9,9 @@ public class Matrices {
         int width = input.nextInt();
         System.out.print("Enter Matrix height: ");
         int height = input.nextInt();
+        int selection, determinant = 0;
         int[][] matrix = calc.createArray(width,height);
-        int selection, 
-            determinant = 0;
-        
+                
         calc.printArray(matrix); // matrix output
         System.out.println("1. Addition\n"
                         +"2. Subtraction\n"
@@ -87,7 +86,9 @@ public class Matrices {
         int[][] newMatrix = createArray(matrix[0].length,newWidth);
         int[][] ansMatrix = new int[2][3];
 
-       for (int i = 0; i < ansMatrix.length; i++) for (int j = 0; j < ansMatrix[i].length; j++) ansMatrix[i][j] = (matrix[i][0]*newMatrix[0][j]) + (matrix[i][1]*newMatrix[1][j]) + (matrix[i][2]*newMatrix[2][j]); 
+       for (int i = 0; i < ansMatrix.length; i++) 
+        for (int j = 0; j < ansMatrix[i].length; j++) 
+            ansMatrix[i][j] = (matrix[i][0]*newMatrix[0][j]) + (matrix[i][1]*newMatrix[1][j]) + (matrix[i][2]*newMatrix[2][j]); 
         return ansMatrix;
     }
     int determinant(int[][]matrix){ // calculates determinant 
@@ -152,7 +153,7 @@ public class Matrices {
         double det = calc.determinant(matrix); 
             matrix = calc.adjoint(matrix);
        
-          for (int i = 0; i < matrix.length; i++) 
+        for (int i = 0; i < matrix.length; i++) 
             for (int j = 0; j < matrix.length; j++) invMatrix[i][j] = matrix[i][j]*(1/det); 
          
         return invMatrix;
@@ -166,10 +167,9 @@ public class Matrices {
                 System.out.print("[" + matrix[i][j] + "] ");
             System.out.println();
         }
-
         System.out.println();
     }
-    
+
     void printArray(double[][]matrix){
         System.out.println("-----------");
         for (int i = 0; i < matrix.length; i++) {
