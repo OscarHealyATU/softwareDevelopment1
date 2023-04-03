@@ -72,9 +72,7 @@ public class Matrices {
     int[][] addMatrix(int[][]matrix){ // adds one matrix to another
         int[][] secondMatrix = createArray(matrix[0].length,matrix.length);
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] += secondMatrix[i][j];
-            }
+            for (int j = 0; j < matrix[i].length; j++) matrix[i][j] += secondMatrix[i][j];
         }
         return matrix;
     }
@@ -82,17 +80,15 @@ public class Matrices {
     int[][] subMatrix(int[][]matrix){ // subtracts one matrix from another
         int[][] secondMatrix = createArray(matrix[0].length,matrix.length);
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] -= secondMatrix[i][j];
-            }
+            for (int j = 0; j < matrix[i].length; j++) matrix[i][j] -= secondMatrix[i][j];
         }
         return matrix;
     }
 
     int[][] multMatrix(int[][]matrix, int mHeight){ // multiplies one matrix by another
-        Scanner input = new Scanner(System.in);
+        Scanner inputM = new Scanner(System.in);
         System.out.print("Enter a width ");
-        int newWidth = input.nextInt();
+        int newWidth = inputM.nextInt();
         int[][] newMatrix = createArray(matrix[0].length,newWidth);
         int[][] ansMatrix = new int[2][3];
 
@@ -103,6 +99,7 @@ public class Matrices {
                             + (matrix[i][2]*newMatrix[2][j]); 
             }  
         }
+        inputM.close();
         return ansMatrix;
     }
     int determinant(int[][]matrix){ // calculates determinant 
@@ -144,9 +141,7 @@ public class Matrices {
     int[][] transpose(int[][] matrix){ // calculates transpose
         int[][] newMatrix = new int[matrix[0].length][matrix.length];
         for (int i = 0; i < newMatrix[0].length; i++) {
-           for (int j = 0; j < newMatrix.length; j++) {
-            newMatrix[j][i] = matrix[i][j];
-           }
+           for (int j = 0; j < newMatrix.length; j++) newMatrix[j][i] = matrix[i][j];
         }
         return newMatrix;
     }
@@ -174,21 +169,18 @@ public class Matrices {
        
           if (det !=0) {
             for (int i = 0; i < matrix.length; i++) {
-                for (int j = 0; j < matrix.length; j++) {
-                    invMatrix[i][j] = matrix[i][j]*(1/det); 
-                }
+                for (int j = 0; j < matrix.length; j++) invMatrix[i][j] = matrix[i][j]*(1/det); 
             } 
             System.out.println(det);
         } else System.out.println("Determinant is 0 - inverse method");
         return invMatrix;
      }
+
     // takes in matrix array and prints an output
     void printArray(int[][]matrix){
         System.out.println("-----------");
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print("[" + matrix[i][j] + "] ");
-            }
+            for (int j = 0; j < matrix[i].length; j++) System.out.print("[" + matrix[i][j] + "] ");
             System.out.println();
         }
         System.out.println();
@@ -197,16 +189,14 @@ public class Matrices {
     void printArray(double[][]matrix){
         System.out.println("-----------");
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print("[" + matrix[i][j] + "] ");
-            }
+            for (int j = 0; j < matrix[i].length; j++) System.out.print("[" + matrix[i][j] + "] ");
             System.out.println();
         }
         System.out.println();
     }
      // populating matrix
      int[][] createArray(int width, int height){
-        Scanner input = new Scanner(System.in);
+        Scanner inputCA = new Scanner(System.in);
 
         int[][] matrix = new int[height][width];
         System.out.println("\nEnter a value for:");
@@ -214,10 +204,11 @@ public class Matrices {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
             System.out.print("row " + (i+1) + ", column" + (j+1) + ": ");
-             matrix[i][j] = input.nextInt();       
+             matrix[i][j] = inputCA.nextInt();       
             }
             System.out.println();
         }
+        inputCA.close();
         return matrix;
     }
 }
