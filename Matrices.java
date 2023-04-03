@@ -10,8 +10,8 @@ public class Matrices {
         System.out.print("Enter Matrix height: ");
         int height = input.nextInt();
         int[][] matrix = calc.createArray(width,height);
-        int selection, determinant =0;
-        boolean square = false, big = false;
+        int selection, 
+            determinant = 0;
         
         calc.printArray(matrix); // matrix output
 
@@ -23,9 +23,8 @@ public class Matrices {
             System.out.print(
                          "5. Determinant\n"
                         +"6. Inverse\n");
-        }System.out.println("\n0. Quit");
-
-        System.out.print("Select an option: ");
+        }
+        System.out.println("\n0. Quit\nSelect an option: ");
         selection = input.nextInt();
         
             switch (selection) {
@@ -69,10 +68,8 @@ public class Matrices {
             }
         input.close();
     }
-//////////////////////////////////////////////////////////////////////////////////////
    
-    // adds one matrix to another
-    int[][] addMatrix(int[][]matrix){
+    int[][] addMatrix(int[][]matrix){ // adds one matrix to another
         int[][] secondMatrix = createArray(matrix[0].length,matrix.length);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -82,8 +79,7 @@ public class Matrices {
         return matrix;
     }
 
-    // subtracts one matrix from another
-    int[][] subMatrix(int[][]matrix){
+    int[][] subMatrix(int[][]matrix){ // subtracts one matrix from another
         int[][] secondMatrix = createArray(matrix[0].length,matrix.length);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -93,8 +89,7 @@ public class Matrices {
         return matrix;
     }
 
-    // multiplies one matrix by another
-    int[][] multMatrix(int[][]matrix, int mHeight){
+    int[][] multMatrix(int[][]matrix, int mHeight){ // multiplies one matrix by another
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a width ");
         int newWidth = input.nextInt();
@@ -110,11 +105,10 @@ public class Matrices {
         }
         return ansMatrix;
     }
-    // calculates determinant 
-    int determinant(int[][]matrix){
+    int determinant(int[][]matrix){ // calculates determinant 
         int determinant = 0;
         if (matrix.length == 2) { // calculates 2x2 determinant |A| = (a*d)-(b*c)
-            determinant = (matrix[0][0]*matrix[1][1]) - (matrix[0][1]*matrix[1][0]);
+            determinant = (matrix[0][0]*matrix[1][1])-(matrix[0][1]*matrix[1][0]);
             return determinant; 
         } else {
         int tl, tm, tr;
@@ -127,7 +121,7 @@ public class Matrices {
         return determinant;
      }
 
-     int[][] cofactor(int[][] matrix){
+     int[][] cofactor(int[][] matrix){ // calculates cofactor
         int tl, tm, tr, ml, mm, mr, bl, bm, br;
 
         tl =  (matrix[1][1]*matrix[2][2])-(matrix[2][1]*matrix[1][2]);
@@ -138,16 +132,16 @@ public class Matrices {
         mm =  (matrix[0][0]*matrix[2][2])-(matrix[2][0]*matrix[0][2]);
         mr = -(matrix[0][0]*matrix[2][1])+(matrix[2][0]*matrix[0][1]);
 
-        bl =   (matrix[0][1]*matrix[1][2])-(matrix[1][1]*matrix[0][2]);
-        bm =  -(matrix[0][0]*matrix[1][2])+(matrix[1][0]*matrix[0][2]);
-        br =   (matrix[0][0]*matrix[1][1])-(matrix[1][0]*matrix[0][1]);
+        bl =  (matrix[0][1]*matrix[1][2])-(matrix[1][1]*matrix[0][2]);
+        bm = -(matrix[0][0]*matrix[1][2])+(matrix[1][0]*matrix[0][2]);
+        br =  (matrix[0][0]*matrix[1][1])-(matrix[1][0]*matrix[0][1]);
 
         int[][] cofactor = {{tl,tm,tr},{ml,mm,mr},{bl,bm,br}};
         
         return cofactor;
      }
      
-    int[][] transpose(int[][] matrix){
+    int[][] transpose(int[][] matrix){ // calculates transpose
         int[][] newMatrix = new int[matrix[0].length][matrix.length];
         for (int i = 0; i < newMatrix[0].length; i++) {
            for (int j = 0; j < newMatrix.length; j++) {
@@ -157,7 +151,7 @@ public class Matrices {
         return newMatrix;
     }
 
-    int[][] adjoint(int[][]matrix){
+    int[][] adjoint(int[][]matrix){ // calculates adjoint
         Matrices calc = new Matrices();
         if (matrix.length == 2) {
                 int temp = matrix[0][0];
@@ -181,18 +175,16 @@ public class Matrices {
           if (det !=0) {
             for (int i = 0; i < matrix.length; i++) {
                 for (int j = 0; j < matrix.length; j++) {
-                    invMatrix[i][j] = matrix[i][j]; 
-                    invMatrix[i][j] *= (1/det);
+                    invMatrix[i][j] = matrix[i][j]*(1/det); 
                 }
             } 
             System.out.println(det);
         } else System.out.println("Determinant is 0 - inverse method");
         return invMatrix;
      }
-    /////////////////////////////////////////////////////////////////////
     // takes in matrix array and prints an output
     void printArray(int[][]matrix){
-        System.out.println(" Output:\n-----------");
+        System.out.println("-----------");
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print("[" + matrix[i][j] + "] ");
@@ -203,7 +195,7 @@ public class Matrices {
     }
     
     void printArray(double[][]matrix){
-        System.out.println(" Output:\n-----------");
+        System.out.println("-----------");
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print("[" + matrix[i][j] + "] ");
