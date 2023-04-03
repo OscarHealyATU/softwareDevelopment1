@@ -5,7 +5,7 @@ public class Matrices {
         Scanner input = new Scanner(System.in);
         Matrices calc = new Matrices();    
 
-        System.out.print("\nMatrix Calculator \nEnter Matrix width: ");
+        System.out.print("\nMatrix Calculator \nEnter Matrix width:  ");
         int width = input.nextInt();
         System.out.print("Enter Matrix height: ");
         int height = input.nextInt();
@@ -187,8 +187,8 @@ public class Matrices {
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-            System.out.print("row " + (i+1) + ", column" + (j+1) + ": ");
-             matrix[i][j] = input.nextInt();       
+                System.out.print("row " + (i+1) + ", column" + (j+1) + ": ");
+                matrix[i][j] = input.nextInt();       
             }
             System.out.println();
         }
