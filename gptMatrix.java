@@ -1,48 +1,45 @@
-import java.util.Scanner;
-
 public class gptMatrix {
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        double[][] matrix = new double[3][3];
-
-        // Read in the matrix from the user
-        System.out.println("Enter the 3x3 matrix:");
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                matrix[i][j] = input.nextDouble();
-            }
-        }
-
-        // Calculate the determinant
-        double determinant = matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[2][1] * matrix[1][2])
-                - matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0])
-                + matrix[0][2] * (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0]);
-
-        // Check if the determinant is zero
-        if (determinant == 0) {
-            System.out.println("The matrix is not invertible.");
-            return;
-        }
-
-        // Calculate the inverse
-        double[][] inverse = new double[3][3];
-        inverse[0][0] = (matrix[1][1] * matrix[2][2] - matrix[2][1] * matrix[1][2]) / determinant;
-        inverse[0][1] = (matrix[0][2] * matrix[2][1] - matrix[0][1] * matrix[2][2]) / determinant;
-        inverse[0][2] = (matrix[0][1] * matrix[1][2] - matrix[0][2] * matrix[1][1]) / determinant;
-        inverse[1][0] = (matrix[1][2] * matrix[2][0] - matrix[1][0] * matrix[2][2]) / determinant;
-        inverse[1][1] = (matrix[0][0] * matrix[2][2] - matrix[0][2] * matrix[2][0]) / determinant;
-        inverse[1][2] = (matrix[1][0] * matrix[0][2] - matrix[0][0] * matrix[1][2]) / determinant;
-        inverse[2][0] = (matrix[1][0] * matrix[2][1] - matrix[2][0] * matrix[1][1]) / determinant;
-        inverse[2][1] = (matrix[2][0] * matrix[0][1] - matrix[0][0] * matrix[2][1]) / determinant;
-        inverse[2][2] = (matrix[0][0] * matrix[1][1] - matrix[1][0] * matrix[0][1]) / determinant;
-
-        // Print out the inverse
-        System.out.println("The inverse of the matrix is:");
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.print(inverse[i][j] + " ");
+        
+        int[][] matrix1 = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+        int[][] matrix2 = { {9, 8, 7}, {6, 5, 4}, {3, 2, 1} };
+        
+        int[][] result = multiplyMatrices(matrix1, matrix2);
+        
+        // print the resulting matrix
+        for(int i=0; i<result.length; i++) {
+            for(int j=0; j<result[0].length; j++) {
+                System.out.print(result[i][j] + " ");
             }
             System.out.println();
         }
+    }
+    
+    public static int[][] multiplyMatrices(int[][] matrix1, int[][] matrix2) {
+        
+        int rows1 = matrix1.length;
+        int columns1 = matrix1[0].length;
+        int rows2 = matrix2.length;
+        int columns2 = matrix2[0].length;
+        
+        // check if the matrices can be multiplied
+        if(columns1 != rows2) {
+            throw new IllegalArgumentException("Matrices cannot be multiplied");
+        }
+        
+        // create a new matrix to store the result
+        int[][] result = new int[rows1][columns2];
+        
+        // multiply the matrices
+        for(int i=0; i<rows1; i++) {
+            for(int j=0; j<columns2; j++) {
+                for(int k=0; k<columns1; k++) {
+                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+        
+        return result;
     }
 }

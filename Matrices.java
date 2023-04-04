@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import Lab_22.PrintArray;
+
 public class Matrices {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -10,7 +12,7 @@ public class Matrices {
         System.out.print("Enter Matrix height: ");
         int height = input.nextInt();
         int selection, determinant = 0;
-        int[][] matrix = calc.createArray(width,height);
+        int[][] matrix = calc.createArray(height, width);
                 
         calc.printArray(matrix); // matrix output
         System.out.println("1. Addition\n"
@@ -36,7 +38,7 @@ public class Matrices {
                 calc.printArray(calc.subMatrix(matrix));
                     break;
                 case 3: // multiplication
-                calc.printArray(calc.multMatrix(matrix, width));
+                calc.printArray(calc.multMatrix(matrix));
                     break;
                 case 4: // transpose
                 calc.printArray(calc.transpose(matrix));
@@ -66,31 +68,54 @@ public class Matrices {
     }
    
     int[][] addMatrix(int[][]matrix){ // adds one matrix to another
-        int[][] secondMatrix = createArray(matrix[0].length,matrix.length);
+        int[][] secondMatrix = createArray(matrix.length,matrix[0].length);
         for (int i = 0; i < matrix.length; i++) 
             for (int j = 0; j < matrix[i].length; j++) matrix[i][j] += secondMatrix[i][j];
         return matrix;
     }
 
     int[][] subMatrix(int[][]matrix){ // subtracts one matrix from another
-        int[][] secondMatrix = createArray(matrix[0].length,matrix.length);
+        int[][] secondMatrix = createArray(matrix.length,matrix[0].length);
         for (int i = 0; i < matrix.length; i++) 
             for (int j = 0; j < matrix[i].length; j++) matrix[i][j] -= secondMatrix[i][j];
         return matrix;
     }
 
-    int[][] multMatrix(int[][]matrix, int mHeight){ // multiplies one matrix by another
+    int[][] multMatrix(int[][]matrix){ // multiplies one matrix by another
+        Matrices calc = new Matrices();    
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a width: ");
         int newWidth = input.nextInt();
-        int[][] newMatrix = createArray(matrix[0].length,newWidth);
-        int[][] ansMatrix = new int[2][3];
+        // row1, row 2, row3,
+        // col1, col2, col3
 
-       for (int i = 0; i < ansMatrix.length; i++) 
-        for (int j = 0; j < ansMatrix[i].length; j++) 
-            ansMatrix[i][j] = (matrix[i][0]*newMatrix[0][j]) + (matrix[i][1]*newMatrix[1][j]) + (matrix[i][2]*newMatrix[2][j]); 
+        int row1 = matrix.length, 
+            row2 = matrix[0].length,
+            row3 = row1;
+        int col1 = matrix[0].length, 
+            col2 = newWidth,
+            col3 = row2;
+
+        int[][] newMatrix = createArray(row2,col2);
+        int[][] ansMatrix = new int[col3][row3];
+        int [] list = new int[row3*col3];
+        int count =0;
+        calc.printArray(newMatrix);
+        newMatrix = calc.transpose(newMatrix);
+       for (int i = 0; i < row1; i++) {
+        
+        for (int j = 0; j < col1; j++) {
+            list[i] += matrix[i][j]*newMatrix[i][j];   
+            count++;
+        }
+        for (int j = 0; j < list.length; j++) {
+              
+        }
+       }
+            
         return ansMatrix;
     }
+
     int determinant(int[][]matrix){ // calculates determinant 
         int determinant;
         // calculates 2x2 determinant |A| = (a*d)-(b*c)
@@ -180,13 +205,13 @@ public class Matrices {
         System.out.println();
     }
      // populating matrix
-     int[][] createArray(int width, int height){
+     int[][] createArray(int height, int width){
         Scanner input = new Scanner(System.in);
         int[][] matrix = new int[height][width];
         System.out.println("\nEnter a value for:");
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
                 System.out.print("row " + (i+1) + ", column" + (j+1) + ": ");
                 matrix[i][j] = input.nextInt();       
             }
