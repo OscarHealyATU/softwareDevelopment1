@@ -1,25 +1,22 @@
 import java.util.Scanner;
-
-import Lab_22.PrintArray;
-
 public class Matrices {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Matrices calc = new Matrices();    
 
-        System.out.print("\nMatrix Calculator \nEnter Matrix width:  ");
-        int width = input.nextInt();
-        System.out.print("Enter Matrix height: ");
-        int height = input.nextInt();
+        System.out.print("\nMatrix Calculator \n-------------\nDefine it's size: \nEnter number of rows:  ");
+        int row = input.nextInt();
+        System.out.print("Enter number of columns: ");
+        int column = input.nextInt();
         int selection, determinant = 0;
-        int[][] matrix = calc.createArray(height, width);
+        int[][] matrix = calc.createArray(row, column);
                 
         calc.printArray(matrix); // matrix output
         System.out.println("1. Addition\n"
                         +"2. Subtraction\n"
                         +"3. Mulitplication\n"
                         +"4. Transpose");
-        if(width == height) {
+        if(row == column) {
             System.out.print(
                          "5. Determinant\n"
                         +"6. Inverse\n");
@@ -48,7 +45,6 @@ public class Matrices {
                     break;
                 case 6: // inverse
                 determinant = calc.determinant(matrix);
-                System.out.println("Determinant is " + determinant);
                 if (determinant != 0) {
                     System.out.println("Determinant is " + determinant + "\nCofactor");
                     calc.printArray(calc.cofactor(matrix));
@@ -84,35 +80,31 @@ public class Matrices {
     int[][] multMatrix(int[][]matrix){ // multiplies one matrix by another
         Matrices calc = new Matrices();    
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter a width: ");
-        int newWidth = input.nextInt();
-        // row1, row 2, row3,
-        // col1, col2, col3
-
+        System.out.print("Enter number of columns: ");
         int row1 = matrix.length, 
             row2 = matrix[0].length,
             row3 = row1;
-        int col1 = matrix[0].length, 
-            col2 = newWidth,
-            col3 = row2;
+        int col1 = row2, 
+            col2 = input.nextInt(),
+            col3 = col2;
 
         int[][] newMatrix = createArray(row2,col2);
-        int[][] ansMatrix = new int[col3][row3];
-        int [] list = new int[row3*col3];
-        int count =0;
-        calc.printArray(newMatrix);
-        newMatrix = calc.transpose(newMatrix);
-       for (int i = 0; i < row1; i++) {
+        int[][] ansMatrix = new int[row3][col3];
+        int [] list = new int[col3*row3];
         
-        for (int j = 0; j < col1; j++) {
-            list[i] += matrix[i][j]*newMatrix[i][j];   
-            count++;
-        }
-        for (int j = 0; j < list.length; j++) {
-              
-        }
+        calc.printArray(newMatrix);
+        newMatrix = calc.transpose(newMatrix); 
+        // transposed second matrix to make this mess of a loop easier for me
+       for (int x = 0; x < row3; x++) { // loop 3 moves to the next row
+            for (int i = 0; i < ansMatrix[x].length; i++) { //loop 2 moves to the next column
+                for (int j = 0; j < col3; j++) { // loop 1 calculates the value at its position,
+                    list[i] += matrix[x][j]*newMatrix[i][j];
+                }  
+            ansMatrix[x][i] = list[i];
+            list[i]=0;
+            }
        }
-            
+       // loop 2 moves to the next column, and loop 3 moves to the next row
         return ansMatrix;
     }
 
@@ -194,7 +186,6 @@ public class Matrices {
         }
         System.out.println();
     }
-
     void printArray(double[][]matrix){
         System.out.println("-----------");
         for (int i = 0; i < matrix.length; i++) {
