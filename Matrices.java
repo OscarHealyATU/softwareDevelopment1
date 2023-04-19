@@ -45,14 +45,14 @@ public class Matrices {
                     calc.printArray(calc.transpose(matrix));
                     break;
                 case 5: // determinant
-                    System.out.print("Determinant is: " + calc.determinant(matrix));
+                    System.out.println("Determinant is: " + calc.determinant(matrix));
                     break;
                 case 6: // inverse
                     determinant = calc.determinant(matrix);
                     if (determinant != 0) {
-                        System.out.println("Determinant is " + determinant);
+                        System.out.println("\nDeterminant is: " + determinant + "\n");
                         if (matrix.length == 3) {
-                            System.out.println("Cofactor");
+                            System.out.println("\nCofactor");
                             calc.printArray(calc.cofactor(matrix));
                         }
                         System.out.println("Transpose");
